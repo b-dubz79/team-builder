@@ -1,8 +1,8 @@
-import {useState} from 'react'
+import React, {useState} from 'react'
 
-const Form = () => {
+const MemberForm = () => {
     
-}
+
 
 return(
     <form>
@@ -12,6 +12,7 @@ return(
         type='text'
         name='name'
         // onChange={handleChanges}
+        // value=''
         />
         <label htmlFor='email'>Email</label>
         <input
@@ -29,3 +30,6 @@ return(
         {/* //onChange = {handleChanges} */}
     </form>
 )
+}
+
+export default MemberForm

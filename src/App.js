@@ -1,54 +1,32 @@
 import React, {useState} from 'react';
+
 import logo from './logo.svg';
 import './App.css';
+import MemberForm from './MemberForm'
+import TeamMembers from './Data'
 
 function App() {
-  const [members, setMembers] = useState([
-    {
-      name: 'Brian',
-      email: 'butts@gmail.com',
-      role: 'Web Developer'
-    },
-    {
-      name: 'Taryn',
-      email: 'email@gmail.com',
-      role: 'Nurse'
-    },
-    {
-      name: 'Fin',
-      email: 'unicorns@gmail.com',
-      role: 'Student',
-    }
-
-  ])
-
-  const addNewMember = member => {
-    const newMember = {
-    name: member.name,
-    email: member.email,
-    role: member.role
-  }
-  setMembers([...members, newMember])
-  }
+  const MemberCard = () =>  {
+    const [members, setMembers] = useState(TeamMembers);
+    {members.map(member => {return <MemberForm id={member.id} name={member.name} email={member.email} role={member.role}  />} )}
+//   const [members, setMembers] = useState(TeamMembers);
+   
+// console.log('something', members);
+  
+  //   const addNewMember = member => {
+  //   const newMember = {
+  //   name: member.name,
+  //   email: member.email,
+  //   role: member.role
+  // }
+  // setMembers([...members, newMember])
+  // }
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <MemberList members={members}/>
     </div>
   );
 }
-
+// {starInfo.map(userObj => {return <CharCard name = {userObj.name} gender = {userObj.gender}/>})}
 export default App;
