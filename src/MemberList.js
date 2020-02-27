@@ -1,6 +1,7 @@
 import React from 'react'
 
 const MemberList = props => {
+    console.log('checking props', props)
     return (
         <div>
             <h1>{props.name}</h1>
@@ -15,20 +16,4 @@ const MemberList = props => {
 
 export default MemberList;
 
-{members.map(member => {return <MemberForm id={member.id} name={member.name} email={member.email} role={member.role}  />} )}
-
-//   const addNewMember = member => {
-//   const newMember = {
-//   name: member.name,
-//   email: member.email,
-//   role: member.role
-// }
-// setMembers([...members, newMember])
-// }
-
-return (
-<MemberForm/>
-<MemberList/>
-)
-}
 

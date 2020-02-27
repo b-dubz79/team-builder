@@ -1,5 +1,5 @@
 
-let TeamMembers = [
+let data = [
  {
     name: 'Brian',
     email: 'butts@gmail.com',
@@ -16,4 +16,4 @@ let TeamMembers = [
     role: 'Student'
   }]
 
-  export default TeamMembers
+  export default data
