@@ -26,18 +26,18 @@ const MemberForm = (props) => {
 
 const  submitForm = e => {
     e.preventDefault ();
-    props.addNewMember(newMember);
+    props.addNewMember(newMember); //sends memberForms state to addNewMember function (member)
     setNewMember({ name: '', email: '', role: ''})
 }
 return(
-    <form>
+    <form onSubmit={submitForm}>
         <label htmlFor='name'>Member Name</label>
         <input 
         id='name'
         type='text'
         name='name'
         onChange={handleNameChange}
-        // value=''
+        value = {newMember.name}
         />
         <label htmlFor='email'>Email</label>
         <input
@@ -45,6 +45,7 @@ return(
         type='text'
         name='email'
         onChange={handleEmailChange}
+        value = {newMember.email}
         />
         
         <label htmlFor='role'>Role</label>
@@ -53,6 +54,7 @@ return(
         type='text'
         name='role'
         onChange={handleRoleChange}
+        value = {newMember.role}
         />
         <button type='submit'>Submit</button> 
     </form>
